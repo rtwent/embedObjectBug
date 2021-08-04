@@ -32,4 +32,6 @@ After digging, I've found solution, but according to bugs https://github.com/api
 it is hard for me to understand: am i on the right way or I have to read manuals more scrupulously.
 
 After deserialization process - I had everything as expected, but while persisting - strange doctrine behaviour happens. 
-Please look at App\DataPersister\CachedGeoDataPersister comment at line 52. Is it expected behaviour? 
+Please look at App\DataPersister\CachedGeoDataPersister comment at line 52. Original entity data in the UnitOfWork is same, that came from user during patch.
+
+Is it expected behaviour? 
