@@ -49,6 +49,7 @@ final class CachedGeoDataPersister implements ContextAwareDataPersisterInterface
     {
         if (($context['item_operation_name'] ?? '') === 'patch') {
             $originalData = $this->entityManager->getUnitOfWork()->getOriginalEntityData($data);
+            // here $originalData['i18n'] is equals to data that was PATCHed by user
             $this->entityManager->getUnitOfWork()->setOriginalEntityData($data, array_merge($originalData, ['i18n' => null]));
             $data->setI18n($data->getI18n());
         }
